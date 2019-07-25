@@ -43,8 +43,8 @@ class Login extends Component {
     }
     render() {
         return (
-            <div className="Login">
-                <Main>
+            <Main>
+                <div className="Login">
                     <h2>Login with Nomical</h2>
                     <p>Login with your <strong>Nomical</strong> account.<br/> New to Nomical? <a href="/signup">Sign up</a> now.</p>
                     <div className="container">
@@ -58,8 +58,8 @@ class Login extends Component {
                         <br/>
                         <span className="text-danger err"></span>
                     </div>
-                </Main>
-            </div>
+                </div>
+            </Main>
         );
     }
 }

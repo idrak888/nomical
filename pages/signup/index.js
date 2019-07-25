@@ -62,8 +62,8 @@ class Signup extends Component {
     }
     render () {
         return (
-            <div className="Signup">
-                <Main>
+            <Main>
+                <div className="Signup">
                     <h2>Join Nomical</h2>
                     <p>Welcome to <strong>Nomical</strong>, fill up some information and get started!<br/>Already have an account? <a href="/login">Login</a>.</p>
                     <div className="container">
@@ -82,8 +82,8 @@ class Signup extends Component {
                         <br/>
                         <span className="text-danger err"></span>
                     </div>
-                </Main>
-            </div>
+                </div>
+            </Main>
         );
     }
 }

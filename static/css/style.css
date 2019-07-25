@@ -37,7 +37,8 @@ body {
     margin-top: 80px; }
     body .Home .PostsHolder, body .Blog .PostsHolder {
       overflow-y: scroll;
-      height: 800px; }
+      height: 800px;
+      -webkit-overflow-scrolling: touch; }
     body .Home .row, body .Blog .row {
       padding: 30px 50px; }
       body .Home .row .col-sm-7, body .Home .row .col-sm-5, body .Blog .row .col-sm-7, body .Blog .row .col-sm-5 {
@@ -81,8 +82,10 @@ body {
     @media only screen and (max-width: 580px) {
       body .Home .row, body .Blog .row {
         padding: 30px; }
-        body .Home .row .col-sm-7, body .Home .row .col-sm-5, body .Blog .row .col-sm-7, body .Blog .row .col-sm-5 {
-          padding: 20px; } }
+        body .Home .row .col-sm-7, body .Blog .row .col-sm-7 {
+          padding: 20px; }
+        body .Home .row .col-sm-5, body .Blog .row .col-sm-5 {
+          padding: 0px; } }
   body .Blog .PostsHolder {
     height: 500px; }
   body .Blog .row2 .Post img {
@@ -147,13 +150,15 @@ body {
       body .Login .container button, body .Signup .container button {
         border: 0; }
     @media only screen and (max-width: 850px) {
-      body .Login .container, body .Signup .container {
-        width: 70%; }
-        body .Login .container input, body .Login .container button, body .Signup .container input, body .Signup .container button {
-          width: 90%; } }
+      body .Login, body .Signup {
+        padding: 20px; }
+        body .Login .container, body .Signup .container {
+          width: 70%; }
+          body .Login .container input, body .Login .container button, body .Signup .container input, body .Signup .container button {
+            width: 90%; } }
     @media screen and (max-width: 500px) {
       body .Login .container, body .Signup .container {
-        width: 90%; } }
+        width: 100%; } }
   body .Post .loader {
     text-align: center;
     width: 20%;

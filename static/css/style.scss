@@ -56,6 +56,7 @@ body {
         .PostsHolder {
             overflow-y: scroll;
             height: 800px;
+            -webkit-overflow-scrolling: touch;
         } 
         .row {
             padding: 30px 50px;
@@ -117,8 +118,11 @@ body {
         @media only screen and (max-width: 580px) {
             .row {
                 padding: 30px;
-                .col-sm-7, .col-sm-5 {
+                .col-sm-7 {
                     padding: 20px;
+                }
+                .col-sm-5 {
+                    padding: 0px;
                 }
             }
         }
@@ -212,6 +216,7 @@ body {
             }
         }
         @media only screen and (max-width: 850px) {
+            padding: 20px;
             .container {
                 width: 70%;
                 input, button {
@@ -221,7 +226,7 @@ body {
         }
         @media screen and (max-width: 500px) {
             .container {
-                width: 90%;
+                width: 100%;
             }
         }
     }
