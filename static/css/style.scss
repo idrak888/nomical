@@ -1,0 +1,264 @@
+$primary-color: rgb(241, 199, 60);
+$serif-font: 'DM Serif Display';
+
+body {
+    background-color: #fcfcfc;
+    .Header {
+        .navbar {
+            padding: 0;
+            padding-right: 20px;
+            .header-logout {
+                display: none;
+            }
+            .form-inline {
+                img {
+                    padding: 20px 8px 8px 8px;
+                    width: 32px;
+                }
+                input {
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    color: white;
+                    padding: 6px;
+                    border-bottom: 1px solid white;
+                    width: 220px;
+                }
+            }
+            
+            .navbar-brand {
+                padding: 12px 30px;
+                color: white;
+                background-color: $primary-color;
+                font-weight: bold;
+                font-size: 28px;
+                font-family: $serif-font;
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            .nav-link {
+                font-size: x-large;
+            }
+            .navbar-collapse {
+                padding: 40px 35px;
+            }
+            .navbar-text .nav-link{
+                padding: 0px;
+            }
+            form {
+                display: none;
+            }
+        }
+    }
+    .Home, .Blog {
+        overflow-x: hidden;
+        margin-top: 80px;
+        .PostsHolder {
+            overflow-y: scroll;
+            height: 800px;
+        } 
+        .row {
+            padding: 30px 50px;
+            .col-sm-7, .col-sm-5 {    
+                padding: 20px;
+                h4 {
+                    margin-left: 20px;
+                }
+                .Post {
+                    padding: 12px;
+                    width: 90%;
+                    background-color: white;
+                    display: block;
+                    margin: auto;
+                    margin-top: 8px;
+                    .date {
+                        text-align: right;
+                        float: right;
+                        color: red;
+                        font-size: small;
+                    }
+                }
+                .btn {
+                    padding: 10px;
+                    width: 220px;
+                }        
+                p {
+                    font-size: 22px;
+                }
+                h3 {
+                    font-size: 24px;
+                }
+            }
+            .col-sm-7 {
+                .Post {
+                    padding: 12px;
+                    width: 100%;
+                    background-color: white;
+                    display: block;
+                    margin: auto;
+                    margin-top: 8px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            .row {
+                padding: 10px;
+                .col-sm-7, .col-sm-5 {
+                    padding: 10px;
+                    .Post {
+                        p {
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 580px) {
+            .row {
+                padding: 30px;
+                .col-sm-7, .col-sm-5 {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+    .Blog {
+        .PostsHolder {
+            height: 500px;
+        }
+        .row2 {
+            .Post {
+                img {
+                    max-height: 200px;
+                }
+            }
+        }
+    }
+    
+    .Footer  {
+        border-top: 5px solid $primary-color;
+        background-color: rgb(37, 37, 37);
+        color: white;
+        font-size: larger;
+        h2 {
+            font-family: $serif-font;
+            color: white;
+            font-size: 60px;
+            color: $primary-color;
+        }
+        img {
+            cursor: pointer;
+        }
+        span {
+            text-align: center;
+        }
+        .row2 {
+            background-color: black;
+            display: block;
+        }
+        .row {
+            text-align: left;
+            margin: auto;
+            .col-m-4 {
+                ul li {
+                    list-style-type: none;
+                    padding: 10px;
+                    a {
+                        color: white;
+                    }
+                }
+                padding: 30px 40px;
+                display: inline-block;
+                margin: auto;
+            }
+        }
+    }
+    .Login, .Signup {
+        text-align: center;
+        margin-top: 130px;
+        .Header {
+            text-align: left;
+        }
+        h2 {
+            font-family: $serif-font;
+            font-size: 40px;
+        }
+        p {
+            font-size: large;
+        }
+        .container {
+            width: 60%;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgb(233, 233, 233);
+            border-radius: 4px;
+            margin: auto;
+            margin-bottom: 100px;
+            padding: 60px;
+            display: block;
+            hr {
+                width: 100px;
+            }
+            input, button {
+                padding: 6px;
+                width: 65%;
+                border: 0.5px solid rgb(189, 189, 189);
+                border-radius: 3px;
+                margin-top: 8px;
+                -webkit-appearance: none;
+            }
+            button {
+                border: 0;
+            }
+        }
+        @media only screen and (max-width: 850px) {
+            .container {
+                width: 70%;
+                input, button {
+                    width: 90%;
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .container {
+                width: 90%;
+            }
+        }
+    }
+    .Post {
+        .loader {
+            text-align: center;
+            width: 20%;
+            display: block;
+            margin: auto;
+        }
+        
+        .post-container {
+            display: none;
+        }
+    }
+    .UserFlag {
+        z-index: 10;
+        span {
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 220px;
+            background-color: rgb(3, 38, 104);
+            color: white;
+            margin-left: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideRight 0.5s;
+        }
+        @keyframes slideRight {
+            from {margin-left: -100px}
+            to {margin-left: 20px}
+        }
+        .btn-danger {
+            border-radius: 20px;
+        }
+    }
+}

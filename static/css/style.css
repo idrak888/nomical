@@ -1,0 +1,187 @@
+body {
+  background-color: #fcfcfc; }
+  body .Header .navbar {
+    padding: 0;
+    padding-right: 20px; }
+    body .Header .navbar .header-logout {
+      display: none; }
+    body .Header .navbar .form-inline img {
+      padding: 20px 8px 8px 8px;
+      width: 32px; }
+    body .Header .navbar .form-inline input {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      color: white;
+      padding: 6px;
+      border-bottom: 1px solid white;
+      width: 220px; }
+    body .Header .navbar .navbar-brand {
+      padding: 12px 30px;
+      color: white;
+      background-color: #f1c73c;
+      font-weight: bold;
+      font-size: 28px;
+      font-family: "DM Serif Display"; }
+  @media only screen and (max-width: 992px) {
+    body .Header .nav-link {
+      font-size: x-large; }
+    body .Header .navbar-collapse {
+      padding: 40px 35px; }
+    body .Header .navbar-text .nav-link {
+      padding: 0px; }
+    body .Header form {
+      display: none; } }
+  body .Home, body .Blog {
+    overflow-x: hidden;
+    margin-top: 80px; }
+    body .Home .PostsHolder, body .Blog .PostsHolder {
+      overflow-y: scroll;
+      height: 800px; }
+    body .Home .row, body .Blog .row {
+      padding: 30px 50px; }
+      body .Home .row .col-sm-7, body .Home .row .col-sm-5, body .Blog .row .col-sm-7, body .Blog .row .col-sm-5 {
+        padding: 20px; }
+        body .Home .row .col-sm-7 h4, body .Home .row .col-sm-5 h4, body .Blog .row .col-sm-7 h4, body .Blog .row .col-sm-5 h4 {
+          margin-left: 20px; }
+        body .Home .row .col-sm-7 .Post, body .Home .row .col-sm-5 .Post, body .Blog .row .col-sm-7 .Post, body .Blog .row .col-sm-5 .Post {
+          padding: 12px;
+          width: 90%;
+          background-color: white;
+          display: block;
+          margin: auto;
+          margin-top: 8px; }
+          body .Home .row .col-sm-7 .Post .date, body .Home .row .col-sm-5 .Post .date, body .Blog .row .col-sm-7 .Post .date, body .Blog .row .col-sm-5 .Post .date {
+            text-align: right;
+            float: right;
+            color: red;
+            font-size: small; }
+        body .Home .row .col-sm-7 .btn, body .Home .row .col-sm-5 .btn, body .Blog .row .col-sm-7 .btn, body .Blog .row .col-sm-5 .btn {
+          padding: 10px;
+          width: 220px; }
+        body .Home .row .col-sm-7 p, body .Home .row .col-sm-5 p, body .Blog .row .col-sm-7 p, body .Blog .row .col-sm-5 p {
+          font-size: 22px; }
+        body .Home .row .col-sm-7 h3, body .Home .row .col-sm-5 h3, body .Blog .row .col-sm-7 h3, body .Blog .row .col-sm-5 h3 {
+          font-size: 24px; }
+      body .Home .row .col-sm-7 .Post, body .Blog .row .col-sm-7 .Post {
+        padding: 12px;
+        width: 100%;
+        background-color: white;
+        display: block;
+        margin: auto;
+        margin-top: 8px;
+        margin-bottom: 20px; }
+    @media only screen and (max-width: 900px) {
+      body .Home .row, body .Blog .row {
+        padding: 10px; }
+        body .Home .row .col-sm-7, body .Home .row .col-sm-5, body .Blog .row .col-sm-7, body .Blog .row .col-sm-5 {
+          padding: 10px; }
+          body .Home .row .col-sm-7 .Post p, body .Home .row .col-sm-5 .Post p, body .Blog .row .col-sm-7 .Post p, body .Blog .row .col-sm-5 .Post p {
+            font-size: 17px; } }
+    @media only screen and (max-width: 580px) {
+      body .Home .row, body .Blog .row {
+        padding: 30px; }
+        body .Home .row .col-sm-7, body .Home .row .col-sm-5, body .Blog .row .col-sm-7, body .Blog .row .col-sm-5 {
+          padding: 20px; } }
+  body .Blog .PostsHolder {
+    height: 500px; }
+  body .Blog .row2 .Post img {
+    max-height: 200px; }
+  body .Footer {
+    border-top: 5px solid #f1c73c;
+    background-color: #252525;
+    color: white;
+    font-size: larger; }
+    body .Footer h2 {
+      font-family: "DM Serif Display";
+      color: white;
+      font-size: 60px;
+      color: #f1c73c; }
+    body .Footer img {
+      cursor: pointer; }
+    body .Footer span {
+      text-align: center; }
+    body .Footer .row2 {
+      background-color: black;
+      display: block; }
+    body .Footer .row {
+      text-align: left;
+      margin: auto; }
+      body .Footer .row .col-m-4 {
+        padding: 30px 40px;
+        display: inline-block;
+        margin: auto; }
+        body .Footer .row .col-m-4 ul li {
+          list-style-type: none;
+          padding: 10px; }
+          body .Footer .row .col-m-4 ul li a {
+            color: white; }
+  body .Login, body .Signup {
+    text-align: center;
+    margin-top: 130px; }
+    body .Login .Header, body .Signup .Header {
+      text-align: left; }
+    body .Login h2, body .Signup h2 {
+      font-family: "DM Serif Display";
+      font-size: 40px; }
+    body .Login p, body .Signup p {
+      font-size: large; }
+    body .Login .container, body .Signup .container {
+      width: 60%;
+      background-color: white;
+      box-shadow: 2px 2px 5px #e9e9e9;
+      border-radius: 4px;
+      margin: auto;
+      margin-bottom: 100px;
+      padding: 60px;
+      display: block; }
+      body .Login .container hr, body .Signup .container hr {
+        width: 100px; }
+      body .Login .container input, body .Login .container button, body .Signup .container input, body .Signup .container button {
+        padding: 6px;
+        width: 65%;
+        border: 0.5px solid #bdbdbd;
+        border-radius: 3px;
+        margin-top: 8px;
+        -webkit-appearance: none; }
+      body .Login .container button, body .Signup .container button {
+        border: 0; }
+    @media only screen and (max-width: 850px) {
+      body .Login .container, body .Signup .container {
+        width: 70%; }
+        body .Login .container input, body .Login .container button, body .Signup .container input, body .Signup .container button {
+          width: 90%; } }
+    @media screen and (max-width: 500px) {
+      body .Login .container, body .Signup .container {
+        width: 90%; } }
+  body .Post .loader {
+    text-align: center;
+    width: 20%;
+    display: block;
+    margin: auto; }
+  body .Post .post-container {
+    display: none; }
+  body .UserFlag {
+    z-index: 10; }
+    body .UserFlag span {
+      padding: 10px 20px;
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 220px;
+      background-color: #032668;
+      color: white;
+      margin-left: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: slideRight 0.5s; }
+@keyframes slideRight {
+  from {
+    margin-left: -100px; }
+  to {
+    margin-left: 20px; } }
+    body .UserFlag .btn-danger {
+      border-radius: 20px; }
+
+/*# sourceMappingURL=style.css.map */
