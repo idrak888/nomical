@@ -4,7 +4,8 @@ body {
     padding: 0;
     padding-right: 20px; }
     body .Header .navbar .header-logout {
-      display: none; }
+      display: none;
+      border-radius: 0; }
     body .Header .navbar .form-inline img {
       padding: 20px 8px 8px 8px;
       width: 32px; }
@@ -166,6 +167,19 @@ body {
     margin: auto; }
   body .Post .post-container {
     display: none; }
+  body .WriteFlag {
+    z-index: 10;
+    cursor: pointer; }
+    body .WriteFlag img {
+      padding: 10px;
+      border-radius: 100%;
+      width: 100px;
+      background-image: linear-gradient(#fffd6a, #f1c73c);
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 70px;
+      margin: 0 20px 20px 0; }
   body .UserFlag {
     z-index: 10; }
     body .UserFlag span {
@@ -181,6 +195,16 @@ body {
       margin-bottom: 20px;
       text-align: center;
       animation: slideRight 0.5s; }
+    @media screen and (max-width: 500px) {
+      body .UserFlag span {
+        top: 0;
+        left: unset;
+        right: 0;
+        bottom: unset;
+        margin: 65px 0 0 0;
+        border-radius: 0px;
+        width: auto;
+        padding: 10px; } }
 @keyframes slideRight {
   from {
     margin-left: -100px; }
@@ -188,5 +212,21 @@ body {
     margin-left: 20px; } }
     body .UserFlag .btn-danger {
       border-radius: 20px; }
+  body .PostPage {
+    margin-top: 130px;
+    padding: 20px; }
+    body .PostPage .container {
+      width: 100%; }
+      body .PostPage .container .text-secondary {
+        font-size: 20px; }
+      body .PostPage .container .content {
+        font-size: 25px; }
+      body .PostPage .container .first::first-letter {
+        color: red;
+        font-size: 200%; }
+      body .PostPage .container .loader {
+        width: 100px;
+        display: block;
+        margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

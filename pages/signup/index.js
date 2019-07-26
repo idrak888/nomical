@@ -40,7 +40,7 @@ class Signup extends Component {
                     displayName: name.value
                 }).then(() => {
                     console.log(user);
-                    window.location.reload();
+                    window.location = "/";
                 }, (error) => {
                     
                 });

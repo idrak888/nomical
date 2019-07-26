@@ -39,19 +39,19 @@ class Home extends Component {
                 <Main>
                     <div className="row">
                         <div className="col-sm-7">
-                            <Post className="highlight" date={this.state.highlight.dateCreated} mainImg={this.state.highlight.mainImg} title={this.state.highlight.title} subtitle={this.state.highlight.subtitle} writer={this.state.highlight.writer}/>
+                            <Post className="highlight" id={this.state.highlight._id} date={this.state.highlight.dateCreated} mainImg={this.state.highlight.mainImg} title={this.state.highlight.title} subtitle={this.state.highlight.subtitle} writer={this.state.highlight.writer}/>
                             <hr/> 
                             <h2>Welcoming Economists</h2>
                             <p><strong>Nomical</strong> is the globalized blog for economics enthusiasts, offering daily news, stock market highlights, academical insights, politics, macroeconomics, finance and many more.</p>
                             <p>Start by creating an account and joining the Nomical writers club. Contribute by sharing your invaluable knowledge with us. </p>
                             <br/>
-                            <button className="btn btn-outline-primary">Join Nomical</button>
+                            <a href="/signup"><button className="btn btn-outline-primary">Join Nomical</button></a>
                         </div>
                         <div className="col-sm-5">
                             <h4>Trending</h4>
                             <div className="PostsHolder">
                                 {this.state.posts.map((post, index) => {
-                                    return <Post key={index} date={post.dateCreated} writer={post.writer} mainImg={post.mainImg} title={post.title} subtitle={post.subtitle}/>
+                                    return <Post key={index} id={post._id} date={post.dateCreated} writer={post.writer} mainImg={post.mainImg} title={post.title} subtitle={post.subtitle}/>
                                 })}
                             </div>
                         </div>

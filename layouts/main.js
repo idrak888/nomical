@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import * as firebase from 'firebase';
 import UserFlag from '../components/UserFlag';
+import WriteFlag from '../components/WriteFlag';
 
 var firebaseConfig = {
     apiKey: "AIzaSyA_EfYinSIFG6WzPH1L-4gZ0Oi5Q-6rzs4",
@@ -21,11 +22,13 @@ if (!firebase.apps.length) {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         document.querySelector('.UserFlag span').innerHTML = "Logged in as " + user.displayName;
+        document.querySelector('.WriteFlag').style.display = 'block';
         document.querySelector('.Header .header-logout').style.display = 'inline-block';
         document.querySelector('.Header .header-login').style.display = 'none';
         console.log(user);
     } else {
         document.querySelector('.Header .header-logout').style.display = 'none';
+        document.querySelector('.WriteFlag').style.display = 'none';
         document.querySelector('.Header .header-login').style.display = 'inline-block';
         document.querySelector('.UserFlag span').innerHTML = "Not logged in";
     }
@@ -61,6 +64,7 @@ export default ({ children }) => (
         <br/>
         <Footer/>
         <UserFlag/>
+        <WriteFlag/>
     </div>
 )
 

@@ -24,7 +24,7 @@ class Login extends Component {
         } else {
             firebase.auth().signInWithEmailAndPassword(email.value, password.value)
             .then(() => {
-                window.location.reload();
+                window.location = "/";
             })
             .catch((error) => {
                 // Handle Errors here.

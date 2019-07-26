@@ -33,7 +33,7 @@ const Header = props => {
                     </form>
                     <span className="navbar-text">
                         <a className="nav-link header-login" href="/login">Login</a>
-                        <button className="btn btn-danger header-logout" onClick={logout}>Log out</button>
+                        <button className="btn btn-outline-danger header-logout" onClick={logout}>Log out</button>
                     </span>
                 </div>
             </nav>

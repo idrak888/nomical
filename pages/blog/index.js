@@ -47,13 +47,13 @@ class Blog extends Component {
                 <Main>
                     <div className="row">
                         <div className="col-sm-7">
-                            <Post date={this.state.highlight.dateCreated} mainImg={this.state.highlight.mainImg} title={this.state.highlight.title} subtitle={this.state.highlight.subtitle} writer={this.state.highlight.writer}/>
+                            <Post id={this.state.highlight._id} date={this.state.highlight.dateCreated} mainImg={this.state.highlight.mainImg} title={this.state.highlight.title} subtitle={this.state.highlight.subtitle} writer={this.state.highlight.writer}/>
                         </div>
                         <div className="col-sm-5">
                             <h4>Trending</h4>
                             <div className="PostsHolder">
                                 {this.state.trending.map((post, index) => {
-                                    return <Post key={index} date={post.dateCreated} writer={post.writer} mainImg={post.mainImg} title={post.title} subtitle={post.subtitle}/>
+                                    return <Post id={post._id} key={index} date={post.dateCreated} writer={post.writer} mainImg={post.mainImg} title={post.title} subtitle={post.subtitle}/>
                                 })}
                             </div>
                         </div>

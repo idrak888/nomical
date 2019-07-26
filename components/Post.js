@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Post = props => {
     return (
@@ -8,7 +9,9 @@ const Post = props => {
                 <span className="text-primary">{props.writer}</span> <span className="date">{props.date}</span>
                 <br/>
                 <img src={props.mainImg} width="100%"/>
-                <a href="#"><h3>{props.title}</h3></a>
+                <h3><Link href={`/post?id=${props.id}`}>
+                    <a>{props.title}</a>
+                </Link></h3>
                 <p className="text-secondary">{props.subtitle}</p>
             </div>
         </div>
