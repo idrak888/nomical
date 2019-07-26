@@ -6,6 +6,8 @@ body {
     body .Header .navbar .header-logout {
       display: none;
       border-radius: 0; }
+    body .Header .navbar .navbar-toggler {
+      border: 0; }
     body .Header .navbar .form-inline img {
       padding: 20px 8px 8px 8px;
       width: 32px; }
@@ -25,10 +27,16 @@ body {
       font-size: 28px;
       font-family: "DM Serif Display"; }
   @media only screen and (max-width: 992px) {
+    body .Header .navbar {
+      padding: 0; }
+    body .Header .navbar-toggler {
+      margin-right: 20px; }
     body .Header .nav-link {
       font-size: x-large; }
     body .Header .navbar-collapse {
-      padding: 40px 35px; }
+      padding: 40px 35px;
+      height: 300px;
+      background-color: black; }
     body .Header .navbar-text .nav-link {
       padding: 0px; }
     body .Header form {
@@ -168,18 +176,32 @@ body {
   body .Post .post-container {
     display: none; }
   body .WriteFlag {
-    z-index: 10;
-    cursor: pointer; }
+    z-index: 5;
+    cursor: pointer;
+    display: none; }
     body .WriteFlag img {
       padding: 10px;
       border-radius: 100%;
       width: 100px;
-      background-color: black;
+      background-color: #032668;
       position: fixed;
       bottom: 0;
       right: 0;
       width: 70px;
       margin: 0 20px 20px 0; }
+  body .popup {
+    z-index: 10;
+    cursor: pointer;
+    display: none; }
+    body .popup img {
+      padding: 10px;
+      width: 100px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 170px;
+      filter: drop-shadow(0 0 0.9rem #999999);
+      margin: 0 60px 40px 0; }
   body .UserFlag {
     z-index: 10; }
     body .UserFlag span {
@@ -205,6 +227,11 @@ body {
     margin-left: 20px; } }
     body .UserFlag .btn-danger {
       border-radius: 20px; }
+  body .NewPost {
+    margin-top: 130px; }
+    body .NewPost .WriteFlag, body .NewPost .popup, body .NewPost .Footer {
+      display: none;
+      visibility: hidden; }
   body .PostPage {
     margin-top: 130px;
     padding: 20px; }
