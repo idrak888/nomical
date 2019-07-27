@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from '../layouts/main';
 import Post from '../components/Post';
 import axios from 'axios';
+import { initGA, logPageView } from '../utils/analytics';
 
 class Home extends Component {
     state = {
@@ -13,6 +14,12 @@ class Home extends Component {
         highlight : {}
     }
     componentDidMount() {
+        if (!window.GA_INITIALIZED) {
+            initGA();
+            window.GA_INITIALIZED = true;
+        }
+        logPageView();
+
         const postContainers = document.querySelectorAll('.Post .post-container');
         const postLoaders = document.querySelectorAll('.Post .loader');
 

@@ -9,7 +9,7 @@ class Post extends Component {
         content: []
     }
     componentDidMount() {
-        const loader = document.querySelector('.loader');
+        const skeletons = document.querySelectorAll('.skeleton');
         setTimeout(() => {
             var id = this.props.url.query.id;
             axios.get(`https://nomical-api.herokuapp.com/post/${id}`)
@@ -18,7 +18,9 @@ class Post extends Component {
                     post:doc.data[0],
                     content:this.formatString(doc.data[0].content, 3)
                 });
-                loader.style.display = 'none';
+                for (let i=0;i<skeletons.length;i++) {
+                    skeletons[i].style.display = 'none';
+                }
             });
         }, 500);
     }
@@ -49,20 +51,42 @@ class Post extends Component {
                     <div className="container">
                         <p className="text-primary">Written by: {this.state.post.writer}</p>
                         <h2>{this.state.post.title}</h2>
+                        <img className="skeleton" src="/static/skeleton2.png" width="100%"/>
                         <p className="text-secondary">{this.state.post.subtitle}</p>
                         <div className="row">
                             <div className="col-sm-6">
                                 <img src={this.state.post.mainImg} width="100%"/>
+                                <img className="skeleton" src="/static/skeleton1.png" width="100%"/>
                                 <br/>
                                 <span className="text-danger">{this.state.post.dateCreated}</span>
                                 <p className="content first">{this.state.content[0]}</p>
+                                <img className="skeleton" src="/static/skeleton3.png" width="100%"/>
+                                <img className="skeleton" src="/static/skeleton3.png" width="100%"/>
                             </div>
                             <div className="col-sm-6">
                                 <p className="content">{this.state.content[1]}</p>
+                                <img className="skeleton" src="/static/skeleton3.png" width="100%"/>
                                 <p className="content">{this.state.content[2]}</p>
+                                <img className="skeleton" src="/static/skeleton2.png" width="100%"/>
                             </div>
                         </div>
-                        <img className="loader" src="https://www.drupal.org/files/issues/throbber_12.gif"/>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <div className="share">
+                        <h3>Share</h3>
+                        <div className="row">
+                            <div className="col-m-4">
+                                <img src="/static/shareIcons/fb.png"/>
+                            </div>
+                            <div className="col-m-4">
+                                <img src="/static/shareIcons/insta.jpg"/>
+                            </div>
+                            <div className="col-m-4">
+                                <img src="/static/shareIcons/pin.png"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Layout>
