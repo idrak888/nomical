@@ -24,12 +24,14 @@ firebase.auth().onAuthStateChanged((user) => {
         localStorage.setItem("user", user.displayName);
         document.querySelector('.UserFlag span').innerHTML = "Logged in as " + user.displayName;
         document.querySelector('.WriteFlag').style.display = 'block';
-        document.querySelector('.popup').style.display = 'block';
         document.querySelector('.Header .header-logout').style.display = 'inline-block';
         document.querySelector('.Header .header-login').style.display = 'none';
         setTimeout(() => {
-            document.querySelector('.popup').style.visibility = 'hidden';
-        }, 3000);
+            document.querySelector('.popup').style.display = 'block';
+        }, 2000);
+        setTimeout(() => {
+            document.querySelector('.popup').style.display = 'none';
+        }, 5000);
     } else {
         localStorage.setItem("user", "");
         document.querySelector('.Header .header-logout').style.display = 'none';

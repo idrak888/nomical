@@ -274,15 +274,19 @@ body {
         cursor: pointer;
         display: none;
         img {
+            animation: expand 0.5s;
             padding: 10px;
             width: 100px;
             position: fixed;
             bottom: 0;
             right: 0;
             width: 170px;
-            filter: drop-shadow(0 0 0.9rem rgb(61, 61, 61));
             margin: 0 60px 40px 0;
         }
+    }
+    @keyframes expand {
+        from {width: 3px;}
+        to {width: 170px;}
     }
     .UserFlag {
         z-index: 10;
@@ -315,6 +319,54 @@ body {
     }
     .NewPost {
         margin-top: 130px;
+        text-align: center;
+        .container {
+            background-color: white;
+            box-shadow: 2px 2px 5px rgb(233, 233, 233);
+            border-radius: 4px;
+            padding: 50px 20px;
+        }
+        .Header {
+            text-align: left;
+        }
+        hr {
+            width: 200px;
+        }
+        form {
+            #title {
+                font-size: 24px;
+            }
+            
+            #file {
+                border: 1.5px dotted rgb(0, 81, 255);
+                padding: 20px;
+            }
+            input, textarea {
+                display: block;
+                margin: auto;
+                width: 70%;
+                border: 1.5px solid rgb(165, 165, 165);
+                border-radius: 3px;
+                padding: 5px;
+                margin-top: 12px;
+            }
+            .text-secondary {
+                cursor: pointer;
+                font-size: 20px;
+                text-decoration: underline;
+                margin-top: 15px;
+            }
+            textarea {
+                resize: none;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            form {
+                input, textarea {
+                    width: 90%;
+                }
+            }
+        }
         .WriteFlag, .popup, .Footer {
             display: none;
             visibility: hidden;

@@ -193,14 +193,19 @@ body {
     cursor: pointer;
     display: none; }
     body .popup img {
+      animation: expand 0.5s;
       padding: 10px;
       width: 100px;
       position: fixed;
       bottom: 0;
       right: 0;
       width: 170px;
-      filter: drop-shadow(0 0 0.9rem #3d3d3d);
       margin: 0 60px 40px 0; }
+@keyframes expand {
+  from {
+    width: 3px; }
+  to {
+    width: 170px; } }
   body .UserFlag {
     z-index: 10; }
     body .UserFlag span {
@@ -227,7 +232,40 @@ body {
     body .UserFlag .btn-danger {
       border-radius: 20px; }
   body .NewPost {
-    margin-top: 130px; }
+    margin-top: 130px;
+    text-align: center; }
+    body .NewPost .container {
+      background-color: white;
+      box-shadow: 2px 2px 5px #e9e9e9;
+      border-radius: 4px;
+      padding: 50px 20px; }
+    body .NewPost .Header {
+      text-align: left; }
+    body .NewPost hr {
+      width: 200px; }
+    body .NewPost form #title {
+      font-size: 24px; }
+    body .NewPost form #file {
+      border: 1.5px dotted #0051ff;
+      padding: 20px; }
+    body .NewPost form input, body .NewPost form textarea {
+      display: block;
+      margin: auto;
+      width: 70%;
+      border: 1.5px solid #a5a5a5;
+      border-radius: 3px;
+      padding: 5px;
+      margin-top: 12px; }
+    body .NewPost form .text-secondary {
+      cursor: pointer;
+      font-size: 20px;
+      text-decoration: underline;
+      margin-top: 15px; }
+    body .NewPost form textarea {
+      resize: none; }
+    @media only screen and (max-width: 600px) {
+      body .NewPost form input, body .NewPost form textarea {
+        width: 90%; } }
     body .NewPost .WriteFlag, body .NewPost .popup, body .NewPost .Footer {
       display: none;
       visibility: hidden; }
