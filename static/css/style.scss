@@ -1,8 +1,17 @@
 $primary-color: rgb(241, 199, 60);
 $serif-font: 'DM Serif Display';
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: #fcfcfc;
+    input {
+        -webkit-appearance: none;
+        &:focus {
+            outline: none;
+            background-color: white;
+        }
+    }
     .Header {
         .navbar {
             background-color: rgb(29, 29, 29);
@@ -99,6 +108,7 @@ body {
                     font-size: 22px;
                 }
                 h3 {
+                    font-family: $serif-font;
                     font-size: 24px;
                 }
             }
@@ -217,7 +227,7 @@ body {
             input, button {
                 padding: 6px;
                 width: 65%;
-                border: 0.5px solid rgb(189, 189, 189);
+                border: 1px solid rgb(172, 172, 172);
                 border-radius: 3px;
                 margin-top: 8px;
                 -webkit-appearance: none;
@@ -235,9 +245,12 @@ body {
                 }
             }
         }
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 600px) {
             .container {
-                width: 100%;
+                width: 90%;
+                input, button {
+                    width: 90%;
+                }
             }
         }
     }
@@ -322,12 +335,43 @@ body {
         text-align: center;
         .container {
             background-color: white;
-            box-shadow: 2px 2px 5px rgb(233, 233, 233);
             border-radius: 4px;
-            padding: 50px 20px;
+            padding: 0px;
+            padding-bottom: 40px;
+            filter: drop-shadow(0 0 0.55rem rgb(170, 170, 170));
+            .head {
+                background-color: rgb(40, 108, 253);
+                color: white;
+                padding: 20px;
+            }
+        }
+        .preview {
+            display: none;
+            .btn-dark {
+                text-align: center;
+            }
+            .previewContent {
+                .first::first-letter {
+                    color: red;
+                    font-size: 160%;
+                }
+                h1 {
+                    font-family: $serif-font;
+                }
+                padding: 20px;
+                text-align: left;
+                p {
+                    font-size: 20px;
+                }
+            }
         }
         .Header {
             text-align: left;
+            .navbar {
+                input {
+                    margin-bottom: 15px;
+                }
+            }
         }
         hr {
             width: 200px;
@@ -350,20 +394,27 @@ body {
                 padding: 5px;
                 margin-top: 12px;
             }
-            .text-secondary {
-                cursor: pointer;
-                font-size: 20px;
-                text-decoration: underline;
-                margin-top: 15px;
-            }
+            
             textarea {
                 resize: none;
             }
         }
+        .btn-dark {
+            font-size: x-large;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                filter: drop-shadow(0 0 0.6rem rgb(112, 186, 255));
+            }
+        }
         @media only screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
             form {
                 input, textarea {
-                    width: 90%;
+                    width: 95%;
                 }
             }
         }
@@ -375,8 +426,12 @@ body {
     .PostPage {
         margin-top: 130px;
         padding: 20px;
+        background-color: white;
         .container {
             width: 100%;
+            h2 {
+                font-family: $serif-font;
+            }
             .text-secondary {
                 font-size: 20px;
             }
