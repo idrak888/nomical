@@ -33,7 +33,7 @@ class NewPost extends Component {
         const date = d.getDate() + " " + months[d.getMonth()];
         const writer = this.state.user;
 
-        var post = {writer, date, title, subtitle, content:content.value, postNumber: this.state.postcount, mainImg: "https://firebasestorage.googleapis.com/v0/b/nomical.appspot.com/o/postImages%2F8.jpg?alt=media&token=d69e0799-4d63-4116-9f6d-84312e519410"};
+        var post = {writer, date, title, subtitle, content:content.value, postNumber: this.state.postcount, mainImg: "https://firebasestorage.googleapis.com/v0/b/nomical.appspot.com/o/postImages%2F"+this.state.postcount+".jpg?alt=media&token=d69e0799-4d63-4116-9f6d-84312e519410"};
         this.setState({post, content:this.formatString(content.value, 3)});
 
         var inputs = document.querySelectorAll('.container input');
