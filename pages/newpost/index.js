@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Main from '../../layouts/main';
+import * as firebase from 'firebase';
+import axios from 'axios';
 
 class NewPost extends Component {
     state = {
         user: "",
         post: {writer: "", title: "", subtitle: "", mainImg: "", content: "", date: "", postNumber: 0},
-        content: []
+        content: [],
+        mainImg: "",
+        postcount: 0
     }
     componentDidMount() {
         const user = localStorage.getItem('user');
@@ -13,6 +17,10 @@ class NewPost extends Component {
         if (user == "") {
             window.location = "/";
         } 
+        axios.get("https://nomical-api.herokuapp.com/posts/1")
+        .then(doc => {
+            this.setState({postcount:doc.data[0].postNumber+1});
+        });
     }
     loadPreview = (e) => {
         e.preventDefault();
@@ -20,17 +28,84 @@ class NewPost extends Component {
 
         const title = document.getElementById('title').value;
         const subtitle = document.getElementById('subtitle').value;
-        const content = document.getElementById('content').value;
+        const content = document.getElementById('content');
         const d = new Date();
         const date = d.getDate() + " " + months[d.getMonth()];
         const writer = this.state.user;
 
-        var post = {writer, date, title, subtitle, content, postNumber: 8, mainImg: "https://firebasestorage.googleapis.com/v0/b/nomical.appspot.com/o/postImages%2F1.jpg?alt=media&token=50478ab6-b3f3-4820-bff7-960f02f1ee78"};
-        this.setState({post, content:this.formatString(content, 3)});
+        var post = {writer, date, title, subtitle, content:content.value, postNumber: this.state.postcount, mainImg: "https://firebasestorage.googleapis.com/v0/b/nomical.appspot.com/o/postImages%2F8.jpg?alt=media&token=d69e0799-4d63-4116-9f6d-84312e519410"};
+        this.setState({post, content:this.formatString(content.value, 3)});
 
-        const preview = document.querySelector('.preview');
-        preview.style.display = 'block';
-        preview.scrollIntoView();
+        var inputs = document.querySelectorAll('.container input');
+        var emptyInputs = false;
+        for (let i=0;i<inputs.length;i++) {
+            if (inputs[i].value == "") {
+                inputs[i].style.borderColor = 'red';
+                emptyInputs = true;
+            } else {
+                inputs[i].style.borderColor = 'rgb(165, 165, 165)';
+            }
+        }
+
+        if (!emptyInputs) {
+            if (content.value == "") {
+                content.style.borderColor = 'red';
+            } else {
+                content.style.borderColor = 'rgb(165, 165, 165)';
+                const preview = document.querySelector('.preview');
+                preview.style.display = 'block';
+                preview.scrollIntoView();
+                console.log(this.state.post);
+            }
+        }
+    }
+    publish = e => {
+        e.preventDefault();
+        e.target.disabled = true;
+
+        axios.post('https://nomical-api.herokuapp.com/posts/', this.state.post).then(doc => {
+            console.log(doc.data);
+            document.querySelector('.finished').style.display = 'block';
+            document.querySelector('.finished .url').attributes.href = `https://nomical.herokuapp.com/post?id=${doc.data._id}`;
+            document.querySelector('.finished .url').innerHTML = `https://nomical.herokuapp.com/post?id=${doc.data._id}`;
+
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+    getImage = (file) => {
+        let storageRef = firebase.storage().ref();
+        var file = document.querySelector('#file').files;
+        var mainImg = "";
+        var metadata = {
+            contentType: 'image/jpeg'
+        };
+
+        var uploadTask = storageRef.child(`postImages/${this.state.postcount}.jpg`).put(file[0], metadata);
+
+        uploadTask.on('state_changed', function(snapshot){
+            // Observe state change events such as progress, pause, and resume
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                console.log('Upload is paused');
+                break;
+                case firebase.storage.TaskState.RUNNING: // or 'running'
+                console.log('Upload is running');
+                break;
+            }
+            }, function(error) {
+            // Handle unsuccessful uploads
+            }, function() {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                mainImg = downloadURL;
+            });
+        });
+        this.setState({mainImg});
     }
     formatString = (string, numlines) => {
         var length = string.length;
@@ -69,7 +144,7 @@ class NewPost extends Component {
                             <input id="subtitle" type="text" placeholder="Subtitle"/>
                             <br/>
                             Upload a thumbnail: 
-                            <input id="file" type="file"/>
+                            <input onChange={this.getImage} id="file" type="file"/>
                             <textarea rows="12" cols="50" id="content" placeholder="Body (min. 30 characters)" scalable="no"></textarea>
                             <br/>
                             <button onClick={this.loadPreview} className="btn btn-dark">Preview</button>
@@ -101,7 +176,11 @@ class NewPost extends Component {
                             
                         </div>
                         <br/>
-                        <button className="btn btn-dark">Post!</button>
+                        <button onClick={this.publish} className="btn btn-dark">Publish</button>
+                    </div>
+                    <div className="container finished">
+                        <p>Post published!</p>
+                        <p>URL: <a className="url"></a></p>
                     </div>
                 </Main>
             </div>

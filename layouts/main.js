@@ -10,7 +10,7 @@ var firebaseConfig = {
     authDomain: "nomical.firebaseapp.com",
     databaseURL: "https://nomical.firebaseio.com",
     projectId: "nomical",
-    storageBucket: "",
+    storageBucket: "nomical.appspot.com",
     messagingSenderId: "694694914928",
     appId: "1:694694914928:web:472c1d849a9d736c"
   };
