@@ -29,29 +29,32 @@ body {
       border-bottom: 1px solid white;
       width: 220px; }
     body .Header .navbar .navbar-brand {
-      padding: 12px 30px;
-      color: white;
-      background-color: #f1c73c;
+      padding: 12px 20px;
+      color: #f8f672;
       font-weight: bold;
       font-size: 28px;
       font-family: "DM Serif Display"; }
   @media only screen and (max-width: 992px) {
     body .Header .navbar {
       padding: 0; }
+    body .Header .navbar-brand {
+      padding: 12px 0px; }
     body .Header .navbar-toggler {
-      margin-right: 20px; }
+      float: left;
+      margin-left: 10px;
+      margin-top: 20px; }
     body .Header .nav-link {
       font-size: x-large; }
     body .Header .navbar-collapse {
       padding: 40px 35px;
-      background-image: linear-gradient(#1d1d1d, #2b2b2b); }
+      background-color: black; }
     body .Header .navbar-text .nav-link {
       padding: 0px; }
     body .Header form {
       display: none; } }
   body .Home, body .Blog {
     overflow-x: hidden;
-    margin-top: 80px; }
+    margin-top: 60px; }
     body .Home .PostsHolder, body .Blog .PostsHolder {
       overflow-y: scroll;
       height: 800px;
@@ -116,7 +119,7 @@ body {
       font-family: "DM Serif Display";
       color: white;
       font-size: 60px;
-      color: #f1c73c; }
+      color: #f8f672; }
     body .Footer img {
       cursor: pointer; }
     body .Footer span {
@@ -316,7 +319,7 @@ body {
       display: none;
       visibility: hidden; }
   body .PostPage {
-    margin-top: 130px;
+    margin-top: 120px;
     padding: 20px;
     background-color: white; }
     body .PostPage .container {
