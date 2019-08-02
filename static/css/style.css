@@ -48,7 +48,17 @@ body {
       font-size: x-large; }
     body .Header .navbar-collapse {
       padding: 40px 35px;
-      background-color: black; }
+      background-color: black;
+      display: none;
+      height: 90vh;
+      animation: showRight 0.5s;
+      transition: 0.75s;
+      animation-fill-mode: forwards; }
+    @keyframes showRight {
+      from {
+        margin-left: -100px; }
+      to {
+        margin-left: -15px; } }
     body .Header .navbar-text .nav-link {
       padding: 0px; }
     body .Header form {

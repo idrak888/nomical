@@ -47,7 +47,6 @@ class Home extends Component {
                     <div className="row">
                         <div className="col-sm-7">
                             <Post className="highlight" id={this.state.highlight._id} date={this.state.highlight.dateCreated} mainImg={this.state.highlight.mainImg} title={this.state.highlight.title} subtitle={this.state.highlight.subtitle} writer={this.state.highlight.writer}/>
-                            
                             <hr/> 
                             <h2>Welcoming Economists</h2>
                             <p><strong>Nomical</strong> is the globalized blog for economics enthusiasts, offering daily news, stock market highlights, academical insights, politics, macroeconomics, finance and many more.</p>

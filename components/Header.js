@@ -9,11 +9,23 @@ const Header = props => {
             window.location.reload();
         });
     }
+    const toggleNavbar = () => {
+        const navbar = document.querySelector('.navbar-collapse');
+        if (navbar.style.display == 'none' || navbar.style.display == '') {
+            navbar.style.display = 'block';
+        }else {
+            navbar.style.opacity = 0;
+            setTimeout(() => {
+                navbar.style.display = 'none';
+                navbar.style.opacity = 1;
+            }, 500);
+        }
+    }
     return (
         <div className="Header">
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
                 <div className="navbar-left">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
                         <img src="/static/bars.png" width="25"/>
                     </button>
                     <a class="navbar-brand" href="/">Nomical</a>

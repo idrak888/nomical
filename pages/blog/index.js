@@ -24,15 +24,20 @@ class Blog extends Component {
     componentDidMount() {
         const postContainers = document.querySelectorAll('.Post .post-container');
         const postLoaders = document.querySelectorAll('.Post .loader');
-        axios.get("https://nomical-api.herokuapp.com/posts/5")
+        axios.get("https://nomical-api.herokuapp.com/posts/11")
         .then(doc => {
             var highlight = {};
             var trending = [];
+            var popular = [];
             highlight = doc.data[0];
             for (let i=1;i<5;i++) {
                 trending.push(doc.data[i]);
             }
-            this.setState({highlight, trending});
+            for (let i=5;i<11;i++) {
+                popular.push(doc.data[i]);
+            }
+            console.log(popular);
+            this.setState({highlight, trending, popular});
 
             for (let i=0;i<postLoaders.length;i++) {
                 postLoaders[i].style.display = 'none';
@@ -61,24 +66,24 @@ class Blog extends Component {
                     <br/>
                     <div className="row row2">
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[0].mainImg} title={this.state.popular[0].title} subtitle={this.state.popular[0].subtitle} writer={this.state.popular[0].writer}/>
+                            <Post id={this.state.popular[0]._id} mainImg={this.state.popular[0].mainImg} title={this.state.popular[0].title} subtitle={this.state.popular[0].subtitle} writer={this.state.popular[0].writer}/>
                         </div>
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[1].mainImg} title={this.state.popular[1].title} subtitle={this.state.popular[1].subtitle} writer={this.state.popular[1].writer}/>
+                            <Post id={this.state.popular[1]._id} mainImg={this.state.popular[1].mainImg} title={this.state.popular[1].title} subtitle={this.state.popular[1].subtitle} writer={this.state.popular[1].writer}/>
                         </div>
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[2].mainImg} title={this.state.popular[2].title} subtitle={this.state.popular[2].subtitle} writer={this.state.popular[2].writer}/>
+                            <Post id={this.state.popular[2]._id} mainImg={this.state.popular[2].mainImg} title={this.state.popular[2].title} subtitle={this.state.popular[2].subtitle} writer={this.state.popular[2].writer}/>
                         </div>
                     </div>
                     <div className="row row2">
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[3].mainImg} title={this.state.popular[3].title} subtitle={this.state.popular[3].subtitle} writer={this.state.popular[3].writer}/>
+                            <Post id={this.state.popular[3]._id} mainImg={this.state.popular[3].mainImg} title={this.state.popular[3].title} subtitle={this.state.popular[3].subtitle} writer={this.state.popular[3].writer}/>
                         </div>
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[4].mainImg} title={this.state.popular[4].title} subtitle={this.state.popular[4].subtitle} writer={this.state.popular[4].writer}/>
+                            <Post id={this.state.popular[4]._id} mainImg={this.state.popular[4].mainImg} title={this.state.popular[4].title} subtitle={this.state.popular[4].subtitle} writer={this.state.popular[4].writer}/>
                         </div>
                         <div className="col-sm-4">
-                            <Post mainImg={this.state.popular[5].mainImg} title={this.state.popular[5].title} subtitle={this.state.popular[5].subtitle} writer={this.state.popular[5].writer}/>
+                            <Post id={this.state.popular[5]._id} mainImg={this.state.popular[5].mainImg} title={this.state.popular[5].title} subtitle={this.state.popular[5].subtitle} writer={this.state.popular[5].writer}/>
                         </div>
                     </div>
                 </Main>
